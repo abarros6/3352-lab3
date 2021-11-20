@@ -1,9 +1,17 @@
 import java.util.ArrayList;
 
-public class Report {
+//this is the concrete observer class 
+public class Report implements Observer {
     ArrayList<Project> projects;
     int totalDone;
     int totalInProgress;
+
+    @Override
+    public void update() {
+        for (Project project : projects) {
+            project.getStatus();
+        }
+    }
 
     public void addProject(Project p) {
         projects.add(p);
